@@ -1,8 +1,13 @@
 {
   "name": "react-link-wave",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "a tag with wave animation",
   "main": "lib/index.js",
+  "keywords": [
+    "react"
+  ],
+  "repository": "https://github.com/willworkgogogo/react-link-wave",
+  "bugs": "https://github.com/Willworkgogogo/react-link-wave/issues",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open",
@@ -14,6 +19,10 @@
   },
   "author": "will_workhard@163.com",
   "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
