@@ -1,0 +1,9 @@
+@keyframes waveMove {
+    from {
+      background-position: 0 100%;
+    }
+    to {
+      background-position: 20px 100%;
+    }
+}
+  

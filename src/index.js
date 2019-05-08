@@ -3,12 +3,16 @@ import PropTypes from 'prop-types'
 
 import './index.css'
 
-function LinkWave({ href, color, children, ...rest }) {
+function LinkWave({ href, color, text, ...rest }) {
     const [visible, setVisible] = useState(false)
-    const background = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='${color.replace(
-        '#',
-        '%23'
-    )}' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%`
+    const calWaveColor = () => {
+        let origin = color
+        if ('style' in rest && 'color' in rest.style) {
+            origin = rest.style.color
+        }
+        return origin.replace('#', '%23')
+    }
+    const background = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='${calWaveColor()}' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%`
     const styles = {
         background,
         textDecoration: 'none',
@@ -30,7 +34,7 @@ function LinkWave({ href, color, children, ...rest }) {
             href={href}
             style={Object.assign({}, combinedStyles, rest.style)}
         >
-            {children}
+            {text}
         </a>
     )
 }
@@ -38,12 +42,12 @@ function LinkWave({ href, color, children, ...rest }) {
 LinkWave.porpTypes = {
     href: PropTypes.string.isRequired,
     color: PropTypes.string,
-    children: PropTypes.element.isRequired
+    text: PropTypes.element.isRequired
 }
 
 LinkWave.defaultProps = {
     href: '',
-    color: '#007fff'
+    color: '#0000EE'
 }
 
 export default LinkWave

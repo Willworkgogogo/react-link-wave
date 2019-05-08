@@ -1,3 +1,8 @@
 examples
 node_modules
 src
+.babelrc
+.gitignore
+.package.json
+.package-lock.json
+webpack.config.js
