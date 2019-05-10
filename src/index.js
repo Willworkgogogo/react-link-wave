@@ -20,19 +20,21 @@ function LinkWave({ href, color, text, ...rest }) {
         animation: 'waveMove 1s infinite linear'
     }
 
+    const { style, ...otherProp } = rest
     const combinedStyles = (() => {
         if (visible) return styles
         return null
     })()
     const moveover = () => setVisible(true)
     const moveleave = () => setVisible(false)
-
+    console.log(Object.assign({}, style, combinedStyles))
     return (
         <a
+            {...otherProp}
             onMouseOver={moveover}
             onMouseLeave={moveleave}
             href={href}
-            style={Object.assign({}, combinedStyles, rest.style)}
+            style={Object.assign({}, style, combinedStyles)}
         >
             {text}
         </a>

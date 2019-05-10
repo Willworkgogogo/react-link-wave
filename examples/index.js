@@ -14,7 +14,7 @@ const App = () => {
 
     return (
         <div>
-            <LinkWave text="请把鼠标移入查看效果" href="javascript:;" style={{color}}></LinkWave>
+            <LinkWave text="请把鼠标移入查看效果2" href="javascript:;" style={{color, textDecoration: 'underline'}} target="_blank"></LinkWave>
             <input type="color" onChange={changeColor} style={{marginLeft: 20}} />
         </div>
     )
