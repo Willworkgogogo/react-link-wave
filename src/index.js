@@ -27,7 +27,6 @@ function LinkWave({ href, color, text, ...rest }) {
     })()
     const moveover = () => setVisible(true)
     const moveleave = () => setVisible(false)
-    console.log(Object.assign({}, style, combinedStyles))
     return (
         <a
             {...otherProp}
