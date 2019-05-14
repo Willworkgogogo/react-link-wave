@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import './index.css'
 
 const DEFAULT_COLOR = '#0000EE'
+const STANDARD_COLOR_HEX_LENGTH = [4, 7]
 
 function LinkWave({ href, color, text, ...rest }) {
     const [visible, setVisible] = useState(false)
@@ -18,7 +19,7 @@ function LinkWave({ href, color, text, ...rest }) {
 
     const formatColor = colorHex => {
         if (typeof colorHex === 'string' && colorHex) {
-            if (colorHex.indexOf('#') === 0 && colorHex.length > 4) {
+            if (colorHex.indexOf('#') === 0 && STANDARD_COLOR_HEX_LENGTH.includes(colorHex.length)) {
                 return colorHex
             } else {
                 return `#${colorHex}`
